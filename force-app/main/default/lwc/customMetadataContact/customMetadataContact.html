@@ -1,0 +1,38 @@
+<template>
+    <lightning-card>
+        <div>
+            
+            <div>
+                <template for:each={metadata.data} for:item="Item"  >         
+                    <div key={Item.Id}>                 
+                        <div >
+                            <lightning-input label={Item.Label} title={Item.sObject__c} name={Item.Field_Api_Name__c} type={Item.Field_Type__c} onchange={valueChange}></lightning-input>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            
+        </div>       
+        <lightning-button 
+            variant="brand" 
+            label="Submit"
+            title="Create Contact"
+            class="slds-var-m-around_small"
+            onclick={submitHandler}></lightning-button>
+    </lightning-card>
+</template>
+
+<!-- <h2>Contact Form</h2><lightning-input
+            label="Contact LastName" onchange={nameChange} type="text"
+            ></lightning-input>
+            <lightning-input
+            label="Field Type" onchange={typeChange} type="text"
+            ></lightning-input>
+            <lightning-combobox
+            label="Object"
+            value={value}
+            options={options}
+            onchange={objectType} ></lightning-combobox>
+            <lightning-input
+            label="Title" onchange={TitleChange} type="text" 
+            ></lightning-input> -->
